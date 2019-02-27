@@ -36,12 +36,12 @@ GameObject.prototype.destroy = function(){
   * should inherit destroy() from GameObject's prototype
 */
 function CharacterStats(attr){
-  GameObject.call(this,attr);
+  GameObject.call(this,attr);//calling GameObject to access its prototypes
   this.healthPoints = attr.healthPoints;
 }
 //-------------------------------------------Inheritance 
 
-CharacterStats.prototype = Object.create(GameObject.prototype);
+CharacterStats.prototype = Object.create(GameObject.prototype);//setting the prototypes of parent to child.
 
 //-------------------------------------------Prototypes
 
@@ -75,7 +75,41 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
 Humanoid.prototype.greet = function(){
   return `${this.name} offers a greeting in ${this.language}`;
 }
+
+
+
+
+
+
  //----------------------------------------------------------------------------------------------------------------
+ //---------------------------------------stretch------------------------------------------------------------------
+
+function Villan(attr){
+  Humanoid.call(this,attr);
+}
+//-------------------------------------------Inheritance
+
+Villan.prototype = Object.create(Humanoid.prototype);
+
+//-------------------------------------------Prototypes
+Villan.prototype.punch = function(){
+}
+
+//----------------------------------------------------------------------------------------------------------------
+function Hero(attr){
+  Humanoid.call(this,attr);
+}
+//-------------------------------------------Inheritance 
+Hero.prototype = Object.create(Humanoid.prototype);
+ //----------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
