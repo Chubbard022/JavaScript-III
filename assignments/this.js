@@ -12,11 +12,32 @@
 // Principle 1
 // code example for Window Binding
 
+console.log(this);
+
 // Principle 2
 // code example for Implicit Binding
 
+const person = {
+    name: 'curtis',
+    age: 21,
+    forLucnh: 'sandwhich',
+    lunch: function(){
+        return `I ate a ${this.forLunch} `;
+    }
+}
+
 // Principle 3
 // code example for New Binding
+
+function Coder(attr){
+    this.name = attr.name;
+    this.skills = attr.skills;
+}
+
+const curtis = new Coder({name:'curtis', skills: 'HTML and CSS'});
+
+console.log(curtis.skills);
+
 
 // Principle 4
 // code example for Explicit Binding
