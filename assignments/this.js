@@ -35,9 +35,19 @@ function Coder(attr){
 }
 
 const curtis = new Coder({name:'curtis', skills: 'HTML and CSS'});
-
 console.log(curtis.skills);
 
 
 // Principle 4
 // code example for Explicit Binding
+
+const likeToEat = ['apples','bananas','bread'];
+
+const individual = {
+    name: 'john Doe',
+    age: 30,
+}
+function eat(items){
+    return `I likes to eat ${items}`;
+}
+console.log(eat.call(individual, likeToEat));
