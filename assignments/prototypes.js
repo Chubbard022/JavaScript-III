@@ -48,6 +48,9 @@ CharacterStats.prototype = Object.create(GameObject.prototype);//setting the pro
 CharacterStats.prototype.takeDamage = function(){
  return `${this.name} took damage`;
 }
+// CharacterStats.prototype.newHealth = function(){
+//   return this.health - 10;
+// }
 
 //----------------------------------------------------------------------------------------------------------------
 /*
@@ -93,6 +96,7 @@ Villan.prototype = Object.create(Humanoid.prototype);
 
 //-------------------------------------------Prototypes
 Villan.prototype.punch = function(){
+  return `${this.name} punched`;
 }
 
 //----------------------------------------------------------------------------------------------------------------
@@ -100,7 +104,21 @@ function Hero(attr){
   Humanoid.call(this,attr);
 }
 //-------------------------------------------Inheritance 
+
 Hero.prototype = Object.create(Humanoid.prototype);
+
+//-------------------------------------------Prototypes
+
+Villan.prototype.protect = function(){
+  return `the punch was deflected`;
+}
+
+
+//========================================
+let superman = new Hero({
+
+});
+
  //----------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------
 
